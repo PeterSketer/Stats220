@@ -1,2 +1,5 @@
  <!--- need to point to new meme when I make it --->
- <!-- Motivation: not enough good memes of bug type Pokemon also Stats is great -->
+# Welcome to my website!
+
+at the moment it just contains memes like this one I have made for Stats220 using R
+![]()
