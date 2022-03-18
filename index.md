@@ -55,4 +55,4 @@ Also, in no particular order:
 I made a lot of GIFs (it's was surprisingly easy, although a little tedious).
 Here is my Heracross looking excited, hosted on my GIPHY page, enjoy :D .
 
-![](https://media.giphy.com/media/EX8ur9KKLLIIRrls8E/giphy.gif)
+![](https://media.giphy.com/media/EX8ur9KKLLIIRrls8E/giphy-downsized-large.gif)
