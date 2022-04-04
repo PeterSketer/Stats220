@@ -1,0 +1,4 @@
+find pieTimer
+class gardenSeed.gardenSoil.on == soil type selected
+
+find id productLevel2 == Gardens - change layout of plants based on this level
