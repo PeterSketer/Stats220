@@ -1,0 +1,86 @@
+---
+title: "Assignment 2"
+subtitle: "STATS 220 Semester One 2022"
+author: "Peter Cory"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+<!--
+NOTE: You need to re-use at least two techniques you learned from Assignment 1 about working with R Markdown to create HTML, in addition to what is specified below.
+-->
+
+## Introduction
+<!--
+Explain what aspect(s) of music listening preferences/habits decided to focus on for your report.
+Write at least 50 words.
+-->
+
+
+## Links to form and data
+Here are the links to my Google form and the CSV file.
+
+link to the Google form: [here](https://forms.gle/M8Y4VV26MJEnSJt58).
+
+link to the CSV file: [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vRxp5enJaTk_6ku44RVKr4knFQfLHR9lDOahJqpknig2wlRg527YCZyMrd0_tkwawBdGEN0lTLQhA-N/pub?output=csv).
+
+## Analytics
+<!--
+Read the data from your published CSV file into a data frame called music_data. - Done
+
+Rename the variables of your data frame and print five rows of your data using slice() and knitr::kable(). - Done
+
+Include two examples of using inline R code to apply functions to your data frame or variables (extracted as vectors). - Done
+
+Include at least three bar charts produced using {ggplot2} with appropriate labels.
+
+Provide some comments that discuss what you have learned from your data.
+-->
+```{r warning = FALSE}
+music_data <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRxp5enJaTk_6ku44RVKr4knFQfLHR9lDOahJqpknig2wlRg527YCZyMrd0_tkwawBdGEN0lTLQhA-N/pub?output=csv") %>% data.frame()
+
+music_data <- music_data %>%
+  rename(stream_srv = 2, music_or_podcast = 3, podcast_type = 4, music_type = 5, weekly_hours = 6, weekly_tracks = 7)
+knitr::kable(slice(music_data,1:5))
+
+responders <- length(music_data$Timestamp)
+
+music_listeners <- sum(str_count(music_data$music_or_podcast,"Music"))
+
+podcast_listeners <- sum(str_count(music_data$music_or_podcast,"Podcasts"))
+
+
+```
+
+Of the `r responders` people who have responded to the survey so far `r music_listeners` of them listen to music, that's `r music_listeners/responders*100`% of them! In total they have listened to `r sum(music_data$weekly_hours)` hours of music or podcasts in a week, that's a staggering `r round(sum(music_data$weekly_hours)/24, digits = 1)` days worth of non-stop listening!
+
+
+## Learning reflection
+<!--
+Describe in your own words at least ONE important idea you learned from Module 2 Creating dynamic reporting systems.
+
+Explain how you have re-used two techniques you learned from Assignment 1 (these can’t be things specifically asked for in this assignment).
+
+Discuss what things related to data technologies that you are more curious about exploring further.
+
+Write at least 150 words for this section of your report.
+-->
+
+### ONE important idea I learned from Module 2 Creating dynamic reporting systems.
+
+I can see some interesting uses for an automatically updating website based on the data received, and R is an easy way of reading that information in and creating an understandable graphic.
+
+### two techniques I reused from Assignment 1.
+
+image_append() and dancing script for 3 and 4 titles
+
+### What things related to data technologies am I curious about exploring further.
+
+Last year I wrote a program which automatically plays an online HTML game called Cookie Clicker. I think it could be fun to take the information that the program collects, in order to play the game, and use it to create a webpage that shows the stats from the game - such as golden cookies clicked or total cookies made. (I have added to my github repo from Assignment 1 if you are interested).
+
+
