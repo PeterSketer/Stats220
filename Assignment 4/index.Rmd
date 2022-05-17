@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r echo = TRUE}
-
+# Colours: #716867 Grayish, #db6965 Reddish, #82cdf0 Sky blue, #edc262 Yellow gold, White
 Pokemons <- fromJSON("Spotify.json")
 
 measurables <- Pokemons %>%
@@ -49,7 +49,7 @@ measurables <- measurables %>%
 
 plot_graph <- function(data_frame, something_1, something_2){
   ggplot(data_frame, aes(something_1, something_2))+
-    geom_point()
+    geom_hex()
 }
 
 plot_graph(measurables,measurables$tempo,measurables$valence)
