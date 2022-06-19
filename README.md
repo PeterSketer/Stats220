@@ -7,6 +7,8 @@
 
 
 My website: https://petersketer.github.io/Stats220/
+and a QR code for the fun of it check out https://barcode.tec-it.com/en if interested
+https://barcode.tec-it.com/barcode.ashx?data=https%3A%2F%2Fpetersketer.github.io%2FStats220%2F&code=MobileQRUrl&eclevel=L
 
 The purpose of this repo (for now anyway) is to showcase some of the assignments for my Stats220 course.
 
